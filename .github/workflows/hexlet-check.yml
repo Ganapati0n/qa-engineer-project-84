@@ -1,0 +1,17 @@
+name: Hexlet Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  hexlet-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Hexlet Check
+        uses: hexlet/hexlet-check-action@v1
+        with:
+          project: qa-engineer-project-84
