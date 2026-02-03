@@ -1,0 +1,17 @@
+name: Hexlet Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  hexlet-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Hexlet Check
+        run: |
+          curl -fsSL https://hexlet.io/install | bash
+          hexlet check qa-engineer-project-84
